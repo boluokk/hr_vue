@@ -46,9 +46,11 @@ import {
   Link,
   Popover,
   Popconfirm,
-  Drawer
+  Drawer,
+  Autocomplete
 } from 'element-ui'
 
+Vue.use(Autocomplete)
 Vue.use(Drawer)
 Vue.use(Popconfirm)
 Vue.use(Popover)

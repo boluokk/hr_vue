@@ -1,5 +1,9 @@
 <template>
   <div>
+    <el-breadcrumb separator="/" style="margin-bottom:15px;">
+      <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
+      <el-breadcrumb-item>员工资料</el-breadcrumb-item>
+    </el-breadcrumb>
     <el-input
       placeholder="请输入员工名称"
       v-model="searchData"

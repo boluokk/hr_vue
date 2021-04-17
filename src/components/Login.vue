@@ -36,11 +36,12 @@
                 class="input"
                 @focus="passNameFocus"
                 @blur="passNameBlur"
+                @keydown.enter="submitForm"
               />
             </div>
           </div>
-          <a href="#">忘记密码?</a>
-          <button class="btn" @click="submitForm">登录</button>
+          <!-- <a href="#">忘记密码?</a> -->
+          <button class="btn" @click="submitForm" style="margin-top: 10px;">登录</button>
         </div>
       </div>
     </div>
