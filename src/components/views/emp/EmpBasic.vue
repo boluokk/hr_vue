@@ -695,7 +695,6 @@ export default {
         '/personnel/emp/top/search/' + this.pageNum + '/' + this.pageSize,
         obj
       ).then(resp => {
-        console.log(resp)
         this.tableData = resp.data.employees
         this.total = resp.data.total
       })
