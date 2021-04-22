@@ -8,9 +8,9 @@
     <el-card class="box-card lightColor" :style="fatherCard">
       <div class="searchInput">
         <el-input
-         v-on:keyup.enter.native="serachKeyDown"
+        v-on:keydown.enter.native="serachKeyDown"
         placeholder="请输入人事名称..."
-        v-model="input"
+        v-model="hrname"
         style="width: 500px; margin: 0 50%;transform: translateX(-50%);display:inline-block;"
         clearable>
         </el-input>
@@ -156,6 +156,7 @@
 </template>
 
 <script>
+import { log } from '../../../assets/js/sockjs';
 export default {
   data() {
     let validatePass = (rule, value, callback) => {
@@ -176,7 +177,7 @@ export default {
       changeCloStyle: {},
       queryTableVisibeldDialog: false,
       loading: false,
-      input: '',
+      hrname: '',
       fatherCard: {
         isRight: true,
         position: 'relative',
@@ -222,7 +223,7 @@ export default {
   },
   methods: {
     serachKeyDown() {
-      this.getRequest('/sys/hr/hrname/' + this.input).then(res=> {
+      this.postRequest('/sys/hr/hrname',{name: this.hrname}).then(res=> {
         this.initData = res.data
       })
     },
